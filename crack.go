@@ -21,7 +21,7 @@ type Cracker func(Hash) (string, error)
 
 func GetCrackers(ht HashType) []Cracker {
   cs, ok := map[HashType][]Cracker{
-    MD5: []Cracker{ nitrxgen, md5decrypt, hashtoolkit },
+    MD5: []Cracker{ nitrxgen, md5decrypt },
   }[ht]
   if !ok {
     return []Cracker(nil)
